@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+/* ของบอส */
+
+/* style โยน */
+html {
+    font-size: 62.5%;
+    overflow: hidden;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --text-color: #221E1E;
+    --text-color: #E68718;
+    --text-color: #FFFFFF;
+    --text-color: #B91D1D;
+    --text-color: #B91D1D;
+    --text-color: #373434;
+    --text-color: #F5F1F1;
+    --text-color: #D9D9D9;
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+
+}
+
+/* login */
+.btn {
+    display: inline-block;
+    align-items: center;
+    margin-top: 1rem;
+    border-radius: 15px;
+    background: #FFFFFF;
+    color: #221E1E;
+    font-weight: 500;
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+
+.btn:hover {
+    background: #F5F1F1;
+}
+
+.header {
+    position: fixed;
+    /* ระยะกว้างของ Bar */
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    /* row กลาง */
+    align-items: center;
+    justify-content: space-between;
+    /* ระยะสูงของ Bar */
+    padding: 3rem 9%;
+    background: #E68718;
+
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #FFFFFF;
+
+}
+
+
+/* ตำแหน่งtextnav */
+.header .navbar a {
+    text-align: left;
+    font-size: 16px;
+    margin-right: 120px;
+    padding: 10px 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+   
+}
+
+.header .navbar a:hover {
+    color: #221E1E;
+}
+
+
+.header .btn {
+    margin-top: 0;
+}
+
+.header #login-btn i {
+    font-size: 2.5rem;
+    color: #221E1E;
+    cursor: pointer;
+    display: none;
+}
+
+.admin{
+    
+    border-radius: 100px;
+}
+
+#menu-btn {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    /* เด้น */
+    cursor: pointer;
+    display: none;
+}
+
+
+
+.header.active {
+    box-shadow: var(--box-shadow);
+    padding: 2rem 9%;
+}
+
+
+
+
+
+/*media queries */
+
+
+
+
+@media(max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+
+    .header.active {
+        padding: 2rem;
+    }
+}
+
+@media(max-width:768px) {
+
+    #menu-btn {
+        display: block;
+    }
+
+    #menu-btn.fa-times {
+        transform: rotate(180deg);
+    }
+
+    .header #login-btn i {
+        display: block;
+    }
+
+    .header #login-btn .btn {
+        display: none;
+    }
+
+
+
+
+}
+
+@media(max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+
+
+body {
+    display: flex;
+
+}
+
+.side {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    height: 100vh;
+    padding: 0 1.7rem;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background-color: #E68718;
+}
+
+.logo {
+    height: 80px;
+    padding: 16px;
+}
+
+.menu {
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu a {
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu a span {
+    overflow: hidden;
+}
+
+.menu a i {
+    font-size: 1.2rem;
+}
+
+li {
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+main {
+    margin-left: 0%;
+    margin-top: 100px;
+    padding: 20px;
+    text-align: center;
+    background-color: #D9D9D9;
+}
+
+.main--content {
+    font-size: 50;
+}
+
+.main-layout {
+    position: absolute;
+}
+
+
+.data {
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px 2%;
+    background-color: #000;
+
+}
+
+
+
+/* Table */
+.table-data {
+    width: 100%;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #E68718;
+    color: black;
+}
+
+th {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody {
+    background: #FFFFFF;
+}
+
+td {
+    padding: 15px;
+    font-size: 16px;
+    color: #000;
+}
+
+tr:nth-child(even) {
+    background: #B91D1D;
+}
+
+tfoot {
+    background: #E68718;
+    font-weight: bold;
+}
+
+tfoot td {
+    padding: 15px;
+}
+
+.table-data {
+
+    background: none;
+    cursor: pointer;
+}
+
+/* กล่องข้อความ */
+.main-title {
+    background: #fff;
+    padding: 2rem;
+
+}
+
+.main-table {
+    font-size: 16px;
+}
+
+.colum {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+}
+
+.all {
+    background: #D9D9D9;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 180px;
+    height: 180px;
+    /* display: flex; */
+    margin-right: 40px;
+    margin-left: 10px;
+}
+
+.round {
+    background: #D9D9D9;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+.detial1 {
+    font-size: 14px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.add {
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.tail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.no {
+    display: inline-block;
+    align-items: center;
+    margin-top: 1rem;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: #221E1E;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: .2rem 1rem;
+
+}
+
+.yes {
+    display: inline-block;
+    align-items: center;
+    margin-top: 1rem;
+    border-radius: 10px;
+    background: blue;
+    color: #221E1E;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: .2rem 1.5rem;
+
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+}
+
+.detial2 {
+    font-size: 14px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.location {
+    display: flex;
+    flex-direction: column;
+}
+
+.map {
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.amost-more {
+    display: flex;
+    flex-direction: column;
+}
+
+.channel {
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.icon-up {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.icon {
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.up {
+    display: inline-block;
+    align-items: center;
+    margin-top: 1rem;
+    border-radius: 10px;
+    background: bisque;
+    color: #000;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: .1rem 1rem;
+
+}
+
+.message-ui {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    font-size: 14px;
+    font-weight: 200;
+}
+
+
+/* กล่องข้อความกรอกข้อมูล */
+.detail1,
+.detail2,
+.detail3 {
+    text-align: left;
+    font-size: 14px;
+}
+
+/* select */
+.select-bar {
+    align-items: center;
+}
+
+.input_pic{
+    display: flex;
+}
+
+.main-table{
+    text-align: left;
+}
+
+/* tabular-totle */
+.tabular-totle{
+    font-size: 16px;
+    text-align: left;
+}
+
+.main--totle{
+    border: solid #FFFFFF;
+    background-color: #FFFFFF;
+    padding: 15px;
+}
+
+.dropdown-toggle{
+    align-items: center;
+    margin-top: 1rem;
+    border-radius: 15px;
+    background: #FFFFFF;
+    color: #221E1E;
+    font-weight: 500;
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+
+.dropdown-item{
+    font-size: 1.4rem;
+}
+
+/* ปุ่มถัดไป-ย้อนกลับ */
+.table-tail{
+    text-align: center;
+    margin-right: 200px;
+}
+
+.btn-btn-primary-back{
+    display: inline-block;
+    align-items: center;
+    margin-top: 1rem;
+    border-radius: 5px;
+    background: #FFFFFF;
+    color: #221E1E;
+    font-weight: 500;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: .5rem ;
+   
+}
+
+.btn-btn-primary-next{
+    display: inline-block;
+    align-items: center;
+    margin-top: 1rem;
+    border-radius: 5px;
+    background:rgb(63, 125, 242);
+    color:white;
+    font-weight: 500;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: .5rem;
+   
+}

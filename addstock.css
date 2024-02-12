@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+}
+body {
+    background-color:darkgray;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu {
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
+    
+}
+
+.menu form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 20px;
+    
+}
+.menu form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    background-color: #E68718;
+    color: #ffffff;
+   
+}
+
+.menu form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+   margin-top: 20px;
+    background-color: #F5F1F1;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #000000;
+    transition: background-color 0.2s;
+}
+.menu form input[type="submit"]:hover {
+  background-color: #E68718;
+  color: #ffffff;
+    transition: background-color 0.2s;
+}
+
+.save--data{
+    width: 350px;
+    background-color: #ffffff;
+    
+    margin: 100px auto;
+}
+
+.save--data form {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    
+}
+
+.save--data form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    background-color: #E68718;
+    color: #ffffff;
+   
+}

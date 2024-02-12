@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style01.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- haeder -->
+    <div class="header">
+
+        <!-- <header class="header"> -->
+
+        <div id="menu-btn" class="fas fa-bars col-2"></div>
+
+        <a href="#" class="logo col-4">ธณพรยานยนต์</a>
+
+        <!-- icon เส้น -->
+        <!-- <div class="bx bx-menu"id="menu-icon"></div> -->
+
+        <nav class="navbar col-5">
+            <a href="#home">หน้าหลัก</a>
+            <a href="#contact">หน้าควบคุมระบบ</a>
+
+        </nav>
+        <div id="admin col-3">
+            <div class="dropdown">
+                <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Admin
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" type="button">แก้ไขโปรไฟล์</a></li>
+                    <li><a class="dropdown-item" href="#" type="button">เปลี่ยนรหัสผ่าน</a></li>
+                    <li><a class="dropdown-item" href="#" type="button">ดูประวัติการซื้อ</a></li>
+                    <li><a class="dropdown-item" href="#" type="button">ออกจากระบบ</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        </header>
+
+        <!-- login form -->
+        <div class="login-form-container">
+            <form action="">
+
+            </form>
+        </div>
+
+
+
+        <!-- </header> -->
+
+        <!-- login form -->
+        <div class="login-form-container">
+            <form action="">
+
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- script.js -->
+    <script src="script.js"></script>
+
+    <!-- ฝั่งแถบ -->
+    <aside>
+        <div class="side">
+            <div class="logo">
+                <ul class="menu"><br><br><br><br><br><br><br><br>
+                    <li>
+                        <a href="index1.html">
+                            <img src="pic/badge_FILL0_wght400_GRAD0_opsz24.png">
+                            <span>รายชื่อลูกค้า</span>
+                        </a>
+                    </li>
+                    <br><br><br>
+
+                    <li>
+                        <a href="index2.html">
+                            <img src="pic/car_tag_FILL0_wght400_GRAD0_opsz24.png">
+                            <span>สินค้า</span>
+                        </a>
+                    </li>
+                    <br><br><br>
+
+
+                    <li>
+                        <a href="index5.html">
+                            <img src="pic/account_balance_FILL0_wght400_GRAD0_opsz24.png">
+                            <span>รายได้</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+
+    <main class="main_con col-12">
+        <br>
+        <div class="main-content col-1">
+            <br><br>
+            <h2><img src="pic/article_FILL0_wght400_GRAD0_opsz24.png">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รายชื่อลูกค้า</h2>
+        </div><br>
+
+        <div class="content">
+            <div class="title">
+                <div class="data col-11">
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+        <div class="tabular">
+            <h3 class="main--title">ข้อมูลลูกค้า</h3><br><br>
+            <div class="table-data">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>หมายเลข</th>
+                            <th>ชื่อลูกค้า</th>
+                            <th>email</th>
+                            <th>เบอร์โทร</th>
+                            <th>จำนวนเงิน</th>                           
+                        </tr>
+                    </thead>
+                    <tbody id="customer">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+         <script>
+fetch('/customer-data')
+  .then(response => response.json())
+  .then(data => {
+    // Sort data by ID
+    data.sort((a, b) => a.id - b.id);
+
+    const customerTableBody = document.getElementById('customer');
+    data.forEach(customer => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${customer.id}</td>
+        <td>${customer.name}</td>
+        <td>${customer.email}</td>
+        <td>${customer.tel}</td>
+        <td>${customer.money}</td>
+      `;
+      customerTableBody.appendChild(row);
+    });
+  });
+         </script>
+        <!-- ปุ่นถัดย้อนกลับ -->
+        <div class="table-tail">
+            <a href="/customer.html" class="btn-btn-primary-back">เพิ่มข้่อมูล</a>
+        </div>
+    </main>
+    </div>
+</body>
+
+</html>

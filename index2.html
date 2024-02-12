@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+
+<body>
+
+    <!-- haeder -->
+    <div class="header">
+        <!-- <header class="header"> -->
+
+        <div id="menu-btn" class="fas fa-bars col-2"></div>
+
+        <a href="#" class="logo col-4">ธณพรยานยนต์</a>
+
+        <!-- icon เส้น -->
+        <!-- <div class="bx bx-menu"id="menu-icon"></div> -->
+
+        <nav class="navbar col-5">
+            <a href="#home">หน้าหลัก</a>
+            <a href="#contact">หน้าควบคุมระบบ</a>
+
+        </nav>
+        <div id="admin col-3">
+            <!-- <button class="admin">admin name <br>
+                ผู้ดูแลระบบ</button>
+            <i class='far fa-user'></i> -->
+            <div class="dropdown">
+                <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Admin
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" type="button">แก้ไขโปรไฟล์</a></li>
+                    <li><a class="dropdown-item" href="#" type="button">เปลี่ยนรหัสผ่าน</a></li>
+                    <li><a class="dropdown-item" href="#" type="button">ดูประวัติการซื้อ</a></li>
+                    <li><a class="dropdown-item" href="#" type="button">ออกจากระบบ</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    </header>
+
+    <!-- login form -->
+    <div class="login-form-container">
+        <form action="">
+
+        </form>
+    </div>
+
+
+
+    <!-- </header> -->
+
+    <!-- login form -->
+    <div class="login-form-container">
+        <form action="">
+
+        </form>
+    </div>
+    </div>
+
+
+
+    <!-- script.js -->
+    
+
+    <!-- ฝั่งแถบข้าง -->
+    <aside>
+        <div class="side">
+            <div class="logo">
+                <ul class="menu"><br><br><br><br><br><br><br><br>
+                    <li>
+                        <a href="index1.html">
+                            <img src="pic/badge_FILL0_wght400_GRAD0_opsz24.png">
+                            <span>รายชื่อลูกค้า</span>
+                        </a>
+                    </li>
+                    <br><br><br>
+
+                    <li>
+                        <a href="index2.html">
+                            <img src="pic/car_tag_FILL0_wght400_GRAD0_opsz24.png">
+                            <span>สินค้า</span>
+                        </a>
+                    </li>
+                    <br><br><br>
+
+
+                    <li>
+                        <a href="index5.html">
+                            <img src="pic/account_balance_FILL0_wght400_GRAD0_opsz24.png">
+                            <span>รายได้</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- หัวข้อ -->
+    <main class="main_con col-12">
+        <br>
+        <div class="main-content col-1">
+            <br><br>
+            <h2><img src="pic/article_FILL0_wght400_GRAD0_opsz24.png">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สินค้า</h2>
+        </div><br>
+
+
+        <!-- เส้นดำ -->
+        <div class="content">
+            <div class="title">
+                <div class="data col-10">
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- กล่องข้อความ -->
+
+        
+
+
+        <br><br>
+        <!-- ตาราง -->
+        <div class="tabular">
+            <h3 class="main--title">ข้อมูลลูกค้า</h3><br><br>
+            <div class="table-data">
+                <table id="car-table">
+                    <thead>
+                      <tr>
+                        <th>ลำดับ</th>
+                        <th>เลขตัวถัง</th>
+                        <th>รุ่น</th>
+                        <th>ยี่ห้อรถยนต์</th>
+                        <th>ประเภทรถ</th>
+                        <th>ระบบเกียร์</th>
+                        <th>สี</th>
+                        <th>ปี</th>
+                        <th>ราคา</th>
+                      </tr>
+                    </thead>
+                    <tbody id="car-table-body">
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <script>
+            fetch('/data')
+  .then(response => response.json())
+  .then(data => {
+    // เรียงข้อมูลตามลำดับ id (จากน้อยไปมาก)
+    data.sort((a, b) => a.id - b.id);
+
+    const carTableBody = document.getElementById('car-table-body');
+    data.forEach(car => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${car.id}</td>
+        <td>${car.numeng}</td>
+        <td>${car.name}</td>
+        <td>${car.brand}</td>
+        <td>${car.type}</td>
+        <td>${car.gear}</td>
+        <td>${car.color}</td>
+        <td>${car.year}</td>
+        <td>${car.price}</td>
+      `;
+      carTableBody.appendChild(row);
+    });
+  });
+
+          </script>
+        <!-- ปุ่นถัดย้อนกลับ -->
+        <div class="table-tail">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/addstock.html" class="btn-btn-primary-next">เพิ่มข้อมูล</a>
+        </div>
+    </main>
+    </div>
+
+</body>
+
+</html>
